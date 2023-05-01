@@ -1,3 +1,3 @@
 import streamlit
 streamlit.title('My parents new healty diner)
-Kale, spinach
+streamlit.text('Kale, spinach)
