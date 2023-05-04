@@ -1,7 +1,7 @@
 import streamlit
 import pandas
 import requests
-import snowflake.connector
+
 streamlit.title('My Moms new healty diner')
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣Omega 3 & Blueberry Oatmeal')
@@ -24,6 +24,8 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 
 streamlit.dataframe(fruits_to_show)
+
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
